@@ -17,8 +17,9 @@ data <- data.table(NEI2)
 baltimoreEmissionsMV <- data[, list(totalPM25MVBmC=sum(Emissions)), by=year]
 
 png("plot5.png")
-plottedEmission <- ggplot(bmore.emissions.aggr, aes(x=factor(year), y=Emissions)) +
+plottedEmission <- ggplot(baltimoreEmissionsMV, aes(x=factor(year), y=totalPM25MVBmC)) +
   geom_bar(stat="identity") +
+  #geom_line(aes(group=1)) + geom_point() +
   xlab("year") +
   ylab(expression("Total emission of " ~ PM[2.5])) +
   ggtitle("Baltimore City, emissions of motor vehicle sources") +

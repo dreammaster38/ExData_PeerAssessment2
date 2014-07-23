@@ -1,4 +1,3 @@
-#library(plyr)
 library(data.table)
 
 ## Load the two data sets if the not already exists in memory

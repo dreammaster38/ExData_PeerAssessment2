@@ -27,7 +27,7 @@ combinedEmissionsMVWithCity <- inner_join(cityDf, combinedEmissionsMV, by="fips"
 png("plot6.png", width=500)
 plottedEmission <- ggplot(combinedEmissionsMVWithCity, aes(x=factor(year), y=totalPM25MVBmLa, fill=county)) +
   geom_bar(stat="identity") +
-  facet_wrap(~ county, nrow=2, scales="free_y") +
+  facet_wrap(~ county, nrow=2, scales="free") +
   xlab("year") +
   ylab(expression("Total emission of " ~ PM[2.5])) +
   ggtitle("Emissions of motor vehicle sources\nin Baltimore City and LA County") +
